@@ -25,18 +25,42 @@ function unfade(element) {
     }, 10);
 }
 
+function platform()
+{
 
+   return navigator.userAgentData.platform;
+}
+function setScreen(){
 
+if(plat.includes("Android") || plat.includes("iPhone") )
+{
+document.querySelector('.container').classList.add('container-mobile');
+document.querySelector('.container-mobile').classList.remove('container');
+document.querySelector('#update-text').innerText = "Tap on screen to start.";
+}
+}
+function setButtons()
+{
+    if(plat.includes("Android") || plat.includes("iPhone") )
+    {
+      return  document.querySelector(".container-mobile");
+    }
+    else
+    {
+       return document.querySelector(".container");
+    }
+}
 //VARIABLES//
 var timer=0;
-
+var plat = platform();
+setScreen();
 var sequence = [];
 var level =0;
 var usr=0;
 var i=0;
 var gameOver= true;
 const title= document.querySelector("#update-text");
-const buttons = document.querySelector(".container");
+const buttons = setButtons();
 
 // VARIABLES//
 
@@ -67,6 +91,10 @@ function HandleClick(e)
     }
 }
 buttons.addEventListener("click", HandleClick);
+//buttons.addEventListener("touchend",HandleClick);
+// if(plat != 'Android' || plat != 'iPhone' || plat != '')
+// {
+
 document.addEventListener("keydown", function(event) {
     if(gameOver== true) {
         update(1);
@@ -75,6 +103,16 @@ document.addEventListener("keydown", function(event) {
     }
 
 })
+//}
+//else{
+    document.addEventListener("touchend", function(event) {
+        if(gameOver== true) {
+            update(1);
+            gameOver = false;
+            document.querySelector("body").classList.remove("game-over");
+        }
+})
+//}
 
 function update(state)
 { 
@@ -119,7 +157,12 @@ function checkSeq(num, key)
         if(num!=sequence[usr])
         {  
             gameOver = true;
+            if(plat.includes("Android") || plat.includes("iPhone")){
+                title.innerText = "Game Over! Tap the screen to start over!";
+            }
+            else{
             title.innerText = "Game Over! Press any key to start over!";
+            }
             sequence = [];
             level = 0;
            // Call Animation function

@@ -1,8 +1,8 @@
 #update-text{
     font-family: 'Press Start 2P' , cursive;
-    font-size: 3rem;
-    margin-bottom: 10rem;
-    margin: 5%;
+    font-size: 4vw;
+    margin-bottom: 7vw;
+    
     color: rgb(245, 245, 127);
 }
 body{
@@ -15,18 +15,27 @@ body{
     margin: auto;
     width:50%;
 
+
+}
+.container-mobile{
+    display: block;
+    margin: auto;
+    width:100vw;
+
+
 }
 .btn{
     margin: 25px;
     display: inline-block;
-    height: 200px;
-    width:  200px;
-    border: 10px solid black;
+    height: 10vw;
+    width:  10vw;
+    border: 1.2vw solid black;
     border-radius: 20%;
 }
 footer{
     font-family: 'Press Start 2P';
-
+    font-size: 1.3vw;
+    margin-top:3vw;
 
 }
 
@@ -45,7 +54,7 @@ footer{
 }
 
 .pressed{
-    box-shadow: 0 0 20px white;
+    box-shadow: 0 0 1.3vw white;
   background-color: grey;
 }
 .game-over{
