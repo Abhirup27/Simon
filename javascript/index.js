@@ -157,7 +157,7 @@ function checkSeq(num, key)
         if(num!=sequence[usr])
         {  
             gameOver = true;
-            if(plat.includes("Android") || plat.includes("iPhone")){
+            if(plat.includes("Android") || (plat.includes("") && navigator.userAgentData.mobile== false)){
                 title.innerText = "Game Over! Tap the screen to start over!";
             }
             else{
