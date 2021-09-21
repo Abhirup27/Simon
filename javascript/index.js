@@ -27,7 +27,6 @@ function unfade(element) {
 
 function platform()
 {
-
    return navigator.userAgentData.platform;
 }
 function setScreen(){
@@ -37,10 +36,16 @@ if(plat.includes("Android") || (!plat.includes("Windows") && navigator.userAgent
 document.querySelector('.container').classList.add('container-mobile');
 document.querySelector('.container-mobile').classList.remove('container');
 document.querySelector('#update-text').innerText = "Tap on screen to start.";
+document.querySelector('h3').classList.add('footer-mobile');
+for(var i=0; i < document.querySelectorAll('.btn').length; i++) {
+    document.querySelectorAll('.btn')[i].classList.add('btn-mobile');
+    document.querySelectorAll('.btn-mobile')[i].classList.add('btn');
+}
 }
 }
 function setButtons()
 {
+    
     if(plat.includes("Android") || (!plat.includes("Windows") && navigator.userAgentData.mobile== false) )
     {
       return  document.querySelector(".container-mobile");

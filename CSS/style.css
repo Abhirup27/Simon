@@ -32,10 +32,24 @@ body{
     border: 1.2vw solid black;
     border-radius: 20%;
 }
+.btn-mobile{
+    margin: 25px;
+    display: inline-block;
+    height: 20vw;
+    width:  20vw;
+    border: 1.2vw solid black;
+    border-radius: 20%;
+}
 footer{
     font-family: 'Press Start 2P';
     font-size: 1.3vw;
     margin-top:3vw;
+
+}
+.footer-mobile{
+    font-family: 'Press Start 2P';
+    font-size: 3vw;
+    margin-top:5vw ;
 
 }
 
