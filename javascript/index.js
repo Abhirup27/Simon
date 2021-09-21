@@ -32,7 +32,7 @@ function platform()
 }
 function setScreen(){
 
-if(plat.includes("Android") || plat.includes("iPhone") )
+if(plat.includes("Android") || (plat.includes("") && navigator.userAgentData.mobile== false) )
 {
 document.querySelector('.container').classList.add('container-mobile');
 document.querySelector('.container-mobile').classList.remove('container');
@@ -41,7 +41,7 @@ document.querySelector('#update-text').innerText = "Tap on screen to start.";
 }
 function setButtons()
 {
-    if(plat.includes("Android") || plat.includes("iPhone") )
+    if(plat.includes("Android") || (plat.includes("") && navigator.userAgentData.mobile== false) )
     {
       return  document.querySelector(".container-mobile");
     }
