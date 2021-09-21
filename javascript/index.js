@@ -32,7 +32,7 @@ function platform()
 }
 function setScreen(){
 
-if(plat.includes("Android") || (plat.includes("") && navigator.userAgentData.mobile== false) )
+if(plat.includes("Android") || (!plat.includes("Windows") && navigator.userAgentData.mobile== false) )
 {
 document.querySelector('.container').classList.add('container-mobile');
 document.querySelector('.container-mobile').classList.remove('container');
@@ -41,7 +41,7 @@ document.querySelector('#update-text').innerText = "Tap on screen to start.";
 }
 function setButtons()
 {
-    if(plat.includes("Android") || (plat.includes("") && navigator.userAgentData.mobile== false) )
+    if(plat.includes("Android") || (!plat.includes("Windows") && navigator.userAgentData.mobile== false) )
     {
       return  document.querySelector(".container-mobile");
     }
@@ -157,7 +157,7 @@ function checkSeq(num, key)
         if(num!=sequence[usr])
         {  
             gameOver = true;
-            if(plat.includes("Android") || (plat.includes("") && navigator.userAgentData.mobile== false)){
+            if(plat.includes("Android") || (!plat.includes("Windows") && navigator.userAgentData.mobile== false)){
                 title.innerText = "Game Over! Tap the screen to start over!";
             }
             else{
