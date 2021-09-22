@@ -99,7 +99,10 @@ buttons.addEventListener("click", HandleClick);
 //buttons.addEventListener("touchend",HandleClick);
 // if(plat != 'Android' || plat != 'iPhone' || plat != '')
 // {
+document.querySelector(".steps").addEventListener("click", function(){
 
+    alert("Simon is a visual memory game where you have to remember the sequence of colours. Each level adds a new colour to the sequence and the player has to press the buttons in the correct sequence(all the buttons leading up to the current level).")
+});
 document.addEventListener("keydown", function(event) {
     if(gameOver== true) {
         update(1);
@@ -111,11 +114,13 @@ document.addEventListener("keydown", function(event) {
 //}
 //else{
     document.addEventListener("touchend", function(event) {
+        if(!event.target.closest(".steps")){
         if(gameOver== true) {
             update(1);
             gameOver = false;
             document.querySelector("body").classList.remove("game-over");
         }
+    }
 })
 //}
 
